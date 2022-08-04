@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+    <title>Help</title>
+  </head>
+  <body style="background-color:rgb(50,50,50);">
+    <div class="jumbotron jumbotron-fluid bg-dark">
+      <div class="jumbotron-background">
+      </div>
+      <div class="container text-white" style="margin-top: 100px;">
+        <h1 class="display-4">Error 404!</h1>
+        <p class="lead">We can't find what you are looking for!</p>
+        <hr class="my-4">
+        <p>{{ insert_me }}</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'index' %}" role="button">Go to homepage.</a>
+        <img src="{% static 'images/favicon.ico' %}" alt="" class="icon">
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+    <title>Django Project</title>
+  </head>
+  <body style="background-color:rgb(50,50,50);">
+    <img src="{% static 'images/favicon.ico' %}" alt="" class="icon">
+    <header>
+    <h1>Hello this is index.html!</h1>
+  </header>
+    <p>{{ insert_me }} {{ insert_content }}</p>
+    <a href="{% url 'help' %}">Go to 404 page.</a>
+    <h2>Welcome to Django Level two!</h2>
+    <h3>Access records:</h3>
+
+    <div class="djangotwo">
+      {% if access_records %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Accessed</th>
+        </thead>
+
+        {% for acc in access_records %}
+        <tr>
+          <td>{{ acc.name }}</td>
+          <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+        <p>NO ACCESS RECORDS FOUND!</p>
+      {% endif %}
+    </div>
+    <div class="djangotwo">
+      {% if users %}
+        <ol>
+        {% for inf in users %}
+        <li>User:<ol>
+          <li>First Name: {{ inf.first_name }}</li>
+          <li>Last Name: {{ inf.last_name }}</li>
+          <li>Email: {{ inf.email }}</li>
+        </ol></li>
+        {% endfor %}
+        </ol>
+      {% else %}
+        <p>NO ACCESS RECORDS FOUND!</p>
+      {% endif %}
+    </div>
+
+  </body>
+</html>
