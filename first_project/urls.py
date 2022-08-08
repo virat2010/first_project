@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import *
 from first_app import views
-from django.urls import re_path
+from django.urls import *
 
 handler404 = 'first_app.views.error_404'
 

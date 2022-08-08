@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from first_app import views
-from django.urls import re_path
+from django.urls import *
+from django.conf.urls import *
 app_name = 'first_app'
 urlpatterns = [
     url(r'^$',views.index,name='index'),
