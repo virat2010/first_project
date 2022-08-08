@@ -8,14 +8,27 @@ header {
 }
 h2 {
   color: white;
+  margin-left: 10px;
 }
 h3 {
   color: white;
+  margin-left: 10px;
 }
 .jumbotron {
   position:relative;
 }
-
+table {
+  margin-left:10px;
+}
+.home {
+  up: 0px;
+  right: 10px;
+  position: fixed;
+}
+.container {
+  color:white;
+  float:left;
+}
 .jumbotron .container {
   position:relative;
   z-index:2;

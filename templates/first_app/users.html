@@ -10,37 +10,25 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
-    <title>Django Project</title>
+    <title>Users</title>
   </head>
   <body style="background-color:rgb(50,50,50);">
     <img src="{% static 'images/favicon.ico' %}" alt="" class="icon">
     <header>
-    <h1>Hello this is index.html!</h1>
+    <h1>Hello, welcome to the users panel!</h1>
   </header>
-    <p>{{ insert_me }} {{ insert_content }}</p>
-    <a href="{% url 'help' %}" class="btn btn-primary">Go to 404 page.</a>
-    <a href="{% url 'users' %}" class="btn btn-primary">Go to users panel.</a>
-    <a href="{% url 'form' %}" class="btn btn-primary">Go to forms page.</a>
-    <a href="{% url 'register' %}" class="btn btn-primary">Go to registration page.</a>
-    <a href="{% url 'login' %}" class="btn btn-primary">Go to login page.</a>
-    <h2>Welcome to Django Level two!</h2>
-    <h3>Access records:</h3>
-
+    <a href="{% url 'index' %}" class="btn btn-primary home">Go to homepage.</a>
     <div class="djangotwo">
-      {% if access_records %}
-      <table>
-        <thead>
-          <th>Site Name</th>
-          <th>Date Accessed</th>
-        </thead>
-
-        {% for acc in access_records %}
-        <tr>
-          <td>{{ acc.name }}</td>
-          <td>{{ acc.date }}</td>
-        </tr>
+      {% if users %}
+        <ol>
+        {% for inf in users %}
+        <li>User:<ol>
+          <li>First Name: {{ inf.first_name }}</li>
+          <li>Last Name: {{ inf.last_name }}</li>
+          <li>Email: {{ inf.email }}</li>
+        </ol></li>
         {% endfor %}
-      </table>
+        </ol>
       {% else %}
         <p>NO ACCESS RECORDS FOUND!</p>
       {% endif %}

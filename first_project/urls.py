@@ -23,6 +23,10 @@ handler404 = 'first_app.views.error_404'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^help/', views.help, name='help'),
+    url(r'^users/', views.users, name='users'),
+    url(r'^form/', views.form, name='form'),
+    url(r'^register/', views.register, name='register'),
+    url(r'^login/', views.login, name='login'),
     url(r'first_app/',include('first_app.urls')),
     url(r'^admin/', admin.site.urls),
 ]
