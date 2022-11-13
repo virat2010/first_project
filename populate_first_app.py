@@ -20,8 +20,7 @@ def add_topic():
 
 def populate(N=5):
 
-    for entry in range(N):
-
+    for _ in range(N):
         # get the topic for the entry
         top = add_topic()
 

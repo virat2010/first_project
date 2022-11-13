@@ -13,8 +13,7 @@ fakegen = Faker()
 
 def populate(N=5):
 
-    for entry in range(N):
-
+    for _ in range(N):
         # Create the fake data for that entry
         fake_firstname = fakegen.first_name()
         fake_lastname = fakegen.last_name()
